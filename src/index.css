@@ -1,15 +1,76 @@
-@import-normalize; /* bring in normalize.css styles */
+@import-normalize; 
 
-body {
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input {
+  display: block;
+  outline: none;
+}
+body{
+  width:1440px;
+margin-right:auto ;
+margin-left:auto;
+}
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Root styles */
+
+:root {
+  --white: #ffffff;
+  --black: #121417;
+  --blue: #3470FF;
+  --blue-2:#0B44CD;
+  --font:#8A8A89;
 }
