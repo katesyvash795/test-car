@@ -22,7 +22,7 @@ export const CatalogButton = styled.button`
 export const Container =styled.div`
 display:flex;
 gap:60px;
-padding:100px 100px 0 100px;
+padding:200px 100px 0 100px;
 `;
 export const TextContainer=styled.div`
 padding:60px;

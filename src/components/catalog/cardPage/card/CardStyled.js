@@ -57,7 +57,7 @@ gap:4px;
 export const Heart =styled.button`
 width:18px;
 height:18px;
-background:black;
+background-image:url('./Vector.svg');
 position: absolute;
 margin:14px;
 top: 0; 

@@ -15,6 +15,6 @@ text-decoration: underline;
 export const ListDiv =styled.div`
 display:flex;
 flex-direction:column;
-padding:150px 0;
+// padding:150px 0;
 
 `;

@@ -1,7 +1,5 @@
-
-import React, { useState, useEffect } from 'react';
+import React, {  useEffect } from 'react';
 import x from './x.svg';
-import image from './image.png';
 import * as Styles from './ModalStyled';
 
 export const Modal = ({ onClose,car}) => {
@@ -16,7 +14,7 @@ export const Modal = ({ onClose,car}) => {
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
         };
-    }, [onClose]);
+    }, []);
     
     return (
         <>

@@ -1,13 +1,39 @@
+import React, { Suspense, useState, useEffect } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { Nav, Link } from './AppStyled';
 
-import Catalog from "pages/Catalog";
-import { Container } from "./AppStyled";
-import { Home } from "pages/Home";
+import { Home } from '../pages/Home';
+import { Catalog } from '../pages/Catalog';
 
-export const App = () => {
+import { FavoritesPage } from 'components/pages/Favorite';
+
+export const App =()=> {
+
+
+
   return (
-    <Container>
-      <Home/>
-      <Catalog/>
-    </Container>
+    <div className="App">
+      <Nav>
+        <Link to="/home" end>
+          Home
+        </Link>
+        <Link to="/catalog"> 
+          Catalog
+        </Link>
+        <Link to="/favorite">
+          Favorite
+        </Link>
+      </Nav>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/favorite" element={<FavoritesPage/>} />
+          <Route path="*" element={<Navigate to="/home" />} />
+        </Routes>
+      </Suspense>
+    </div>
   );
-};
+}
+
+export default App;
