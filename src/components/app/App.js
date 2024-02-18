@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { Suspense} from 'react';
+=======
+import React, { Suspense } from 'react';
+>>>>>>> d711bd94d8cfa7b759591b177b5be5e94bc60abb
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Nav, Link } from './AppStyled';
 
