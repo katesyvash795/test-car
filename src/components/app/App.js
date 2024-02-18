@@ -5,7 +5,7 @@ import { Nav, Link } from './AppStyled';
 import { Home } from '../pages/Home';
 import { Catalog } from '../pages/Catalog';
 
-import { FavoritesPage } from 'components/pages/Favorite';
+import { Favourites } from 'components/pages/Favorite';
 
 export const App =()=> {
 
@@ -28,7 +28,7 @@ export const App =()=> {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
-          <Route path="/favorite" element={<FavoritesPage/>} />
+          <Route path="/favorite" element={<Favourites/>} />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
       </Suspense>

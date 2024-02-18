@@ -5,7 +5,7 @@ import brandsData from './makes.json';
 
 export const Form = ({ onSearch }) => {
   const [brand, setBrand] = useState('');
-  const [price, setPrice] = useState('');
+  const [rentalPrice, setPrice] = useState('');
   const [mileageFrom, setMileageFrom] = useState('');
   const [mileageTo, setMileageTo] = useState('');
 
@@ -13,7 +13,7 @@ export const Form = ({ onSearch }) => {
     e.preventDefault();
     const filters = {
       brand,
-      price,
+      rentalPrice,
       mileage: { from: mileageFrom, to: mileageTo }
     };
     onSearch(filters);
@@ -31,12 +31,11 @@ export const Form = ({ onSearch }) => {
       </label>
 
       <label>Price/1 hour
-        <select value={price} onChange={(e) => setPrice(e.target.value)}>
+        <select value={rentalPrice} onChange={(e) => setPrice(e.target.value)}>
           <option value="">To $</option>
-          <option value="20">$20</option>
-          <option value="30">$30</option>
-          <option value="40">$40</option>
-          {/* Add more options as needed */}
+          <option value="$20">$20</option>
+          <option value="$30">$30</option>
+          <option value="$45">$45</option>
         </select>
       </label>
 

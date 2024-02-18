@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from 'styled-components'; 
+
 export const Button = styled.button`
 background-color:var(--blue);
     color: #fff;
@@ -54,15 +55,21 @@ display:flex;
 flex-direction:column;
 gap:4px;
 `;
-export const Heart =styled.button`
-width:18px;
-height:18px;
-background-image:url('./Vector.svg');
-position: absolute;
-margin:14px;
-top: 0; 
-right: 0;
+
+
+
+export const Heart = styled.button`
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  margin: 14px;
+  top: 0; 
+  right: 0;
+  background-size: cover;
+  border: 2px solid white;
+  cursor: pointer;
 `;
+
 
 export const StyledImage=styled.img`
     border-radius: 14px;

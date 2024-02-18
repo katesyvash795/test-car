@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Modal } from '../../modal/Modal';
 import { Button, TopText, Container, ContainerText, Text, Model, Сharacteristic, СharacteristicDiv, BottomText, Heart, StyledImage } from './CardStyled';
 
-export const CardItem = ({ car }) => {
+export const CardItem = ({ car,updateFavorites}) => { // 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const initialFavouriteState = JSON.parse(localStorage.getItem('favorites') || '[]').some(favorite => favorite.id === car.id);
+    const [isFavourite, setIsFavourite] = useState(initialFavouriteState);
 
     const handleOpenModal = () => {
         setIsModalOpen(true);
@@ -12,12 +14,26 @@ export const CardItem = ({ car }) => {
     const handleCloseModal = () => {
         setIsModalOpen(false);
     };
+    const handleFavourite = () => {
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        const existingIndex = favorites.findIndex(favorite => favorite.id === car.id);
+        if (existingIndex !== -1) {
+          favorites.splice(existingIndex, 1);
+          setIsFavourite(false); // Устанавливаем состояние в false, если автомобиль удаляется из избранного
+        } else {
+          favorites.push(car);
+          setIsFavourite(true); // Устанавливаем состояние в true, если автомобиль добавляется в избранное
+        }
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        updateFavorites();
+      };
 
     return (
         <>
             <Container>
                 <StyledImage src={car.img} alt="" width={274} height={268} />
-                <Heart/> 
+                <Heart onClick={handleFavourite} style={{ backgroundColor: isFavourite ? 'purple' : 'white' }}>
+                    </Heart> 
                 <ContainerText>
                     <TopText>
                         <Text>{car.make} <Model>{car.model}</Model>,<span>{car.year}</span></Text>
