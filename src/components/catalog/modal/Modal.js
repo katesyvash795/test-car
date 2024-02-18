@@ -14,7 +14,7 @@ export const Modal = ({ onClose,car}) => {
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
         };
-    }, []);
+    });
     
     return (
         <>
