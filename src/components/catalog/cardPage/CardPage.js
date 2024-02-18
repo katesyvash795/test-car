@@ -67,7 +67,8 @@ export const CardList = () => {
               key={car.id}
               car={car}
               updateFavorites={updateFavorites}
-            />
+              isFavourite={favorites.some(favorite => favorite.id === car.id)} // Передаем isFavourite как пропс
+/>
           ))}
         </List>
         {visibleCars < filteredCars.length && (

@@ -19,10 +19,10 @@ export const CardItem = ({ car,updateFavorites}) => { //
         const existingIndex = favorites.findIndex(favorite => favorite.id === car.id);
         if (existingIndex !== -1) {
           favorites.splice(existingIndex, 1);
-          setIsFavourite(false); // Устанавливаем состояние в false, если автомобиль удаляется из избранного
+          setIsFavourite(false); 
         } else {
           favorites.push(car);
-          setIsFavourite(true); // Устанавливаем состояние в true, если автомобиль добавляется в избранное
+          setIsFavourite(true); 
         }
         localStorage.setItem('favorites', JSON.stringify(favorites));
         updateFavorites();
